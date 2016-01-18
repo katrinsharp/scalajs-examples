@@ -1,6 +1,6 @@
 import org.scalajs.sbtplugin.ScalaJSPluginInternal
 
-name := "Example project"
+name := "scalajs testing and more"
 
 lazy val root = project.in(file(".")).
   aggregate(crossJS, crossJVM).
