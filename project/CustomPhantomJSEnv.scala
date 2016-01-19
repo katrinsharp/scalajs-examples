@@ -1,4 +1,3 @@
-
 import org.scalajs.core.tools.io.{MemVirtualJSFile, VirtualJSFile}
 import org.scalajs.jsenv.phantomjs.PhantomJSEnv
 

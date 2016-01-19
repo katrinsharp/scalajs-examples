@@ -24,7 +24,15 @@ lazy val cross = crossProject.in(file(".")).
   .jsSettings(
     libraryDependencies ++= Seq(
       Dependencies.scalajsdom.value,
-      Dependencies.tests.scalajsenvs
+      Dependencies.tests.scalajsenvs),
+    scalaJSStage in Global := FastOptStage,
+    jsDependencies += RuntimeDOM % "test",
+    postLinkJSEnv in Test := new CustomPhantomJSEnv(
+      env = Map(
+        "var1" -> "kuku",
+        "var2" -> "shmuku"
+      ),
+      classLoader = scalaJSPhantomJSClassLoader.value
     )
   )
   .configs(TestSettings.ItTest) // 1
