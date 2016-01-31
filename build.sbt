@@ -27,7 +27,7 @@ lazy val cross = crossProject.in(file(".")).
       Dependencies.tests.scalajsenvs),
     scalaJSStage in Global := FastOptStage,
     jsDependencies += RuntimeDOM % "test",
-    postLinkJSEnv in Test := new CustomPhantomJSEnv(
+    jsEnv in Test := new CustomPhantomJSEnv(
       env = Map(
         "var1" -> "kuku",
         "var2" -> "shmuku"
